@@ -1,32 +1,42 @@
 "use client";
 import React from "react";
-import Head from "next/head";
+import Image from "next/image";
+import ProgressBar from "../components/ProgressBar";
+import DefaultContent from "@/components/DefaultContent";
 
-import localFont from "next/font/local";
-
-const neco = localFont({
-  src: [
-    {
-      path: "fonts/Neco-Medium.ttf",
-      weight: "400",
-      style: "normal",
-    },
-    {
-      path: "fonts/Neco-MediumItalic.ttf",
-      weight: "400",
-      style: "italic",
-    },
-  ],
-  variable: "--font-neco",
-});
+import Balance from "@/components/Balance";
 
 export default function Home() {
   return (
     <>
-      <Head></Head>
-      <div className="flex items-center justify-center min-h-screen">
-        <h1 className={`${neco.variable} font-sans italic text-4xl`}>Bud</h1>
-      </div>
+      <DefaultContent>
+        <h2 className="font-header text-3xl mt-8 mb-8">at a glance</h2>
+        <div className="flex justify-between">
+          <div className="w-3/4">
+            <ProgressBar red={30} green={10} blue={10} />
+          </div>
+          <div className="w-1/6">
+            <Balance points={300} />
+          </div>
+        </div>
+        <h2 className="font-header text-3xl mt-8">pao</h2>
+        <div className="mt-5 flex flex-row">
+          <div className="w-1/2 m-5 p-5">
+            <Image
+              src="/img/pao.png"
+              alt="pao the panda"
+              layout="responsive"
+              width={144}
+              height={144}
+            />
+          </div>
+          <div className="w-1/2 m-5 pt-5 pl-5 pr-5 pb-10 flex flex-col-reverse text-right font-sans text-xl">
+            <p>
+              Pao feels... <em>sleepy</em>
+            </p>
+          </div>
+        </div>
+      </DefaultContent>
     </>
   );
 }

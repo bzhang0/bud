@@ -1,7 +1,9 @@
+const { addIconSelectors } = require("@iconify/tailwind");
+
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  purge: ["./pages/**/*.{js,ts,jsx,tsx}", "./components/**/*.{js,ts,jsx,tsx}"],
   content: [
+    "./src/*.html",
     "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
@@ -13,9 +15,10 @@ module.exports = {
         foreground: "var(--foreground)",
       },
       fontFamily: {
-        sans: ["var(--font-neco)"],
+        sans: ["var(--font-normal)"],
+        header: ["var(--font-header)"],
       },
     },
   },
-  plugins: [],
+  plugins: [addIconSelectors(["mdi", "mdi-light", "material-symbols"])],
 };

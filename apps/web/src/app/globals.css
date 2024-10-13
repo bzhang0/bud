@@ -2,9 +2,27 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Define the Nunito-ExtraBold font */
+@font-face {
+  font-family: "Nunito-ExtraBold";
+  src: url("fonts/Nunito-ExtraBold.woff2") format("woff2");
+  font-weight: 800;
+  font-style: normal;
+}
+
+/* Define the Supreme-Regular font */
+@font-face {
+  font-family: "Supreme-Regular";
+  src: url("fonts/Supreme-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+}
+
 :root {
-  --background: #bdc497;
+  --background: #fff7dc;
   --foreground: #171717;
+  --font-header: "Nunito-ExtraBold";
+  --font-normal: "Supreme-Regular";
 }
 
 /* @media (prefers-color-scheme: dark) {
@@ -15,7 +33,7 @@
 } */
 
 body {
-  color: var(--foreground);
+  color: var(--text-color);
   background: var(--background);
 }
 
